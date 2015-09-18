@@ -20,6 +20,96 @@
       <section>
         <h1>Introduction to FDM 3D printing</h1>
       </section>
+      <section>
+        <section>
+          <h3>What is FDM printing</h3>
+          <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Fused_deposition_modeling">Fused deposition modeling</a> is an additive manufacturing technology based on using depositing a material onto a platform in lasers and fusing it together to make a product.</li>
+            <li>Essentially, we deposit molten plastic in a series of very thin layers, and as it cools, it hardens into a solid object.</li>
+          </ul>
+          <img src="resources/fdm-printing.png" style="height: 200px"/>
+        </section>
+        <section>
+          <h3>How does it work?</h3>
+          <p>The <code>plastic filament</code> is drawn in from a spool, heated in the <code>hot end</code>, pushed out through an <code>extruder nozzle</code> on to a <code>build plate</code>.  The position of the build plate and extruder are driven by a series of motors to achieve motion along the <code>X</code>, <code>Y</code>, and <code>Z axes</code>.</p>
+        </section>
+        <section>
+          <p>In the Ultimaker 2, the <code>X</code> and <code>Y</code> axes are handled by moving the extruder assembly around the top of the machine, while the <code>Z</code> axis is handled by moving the build plate up and down.</p>
+          <img src="resources/axis-movement.png" style="height: 350px"/>
+        </section>
+        <section>
+          <h3>So, what kinds of materials work?</h3>
+          <p>You can't just melt down plastic parts and re-use them (not yet, there are some <a href="https://www.kickstarter.com/projects/omnidynamics/strooder-first-truly-consumer-3d-printing-filament">Kickstarter projects</a> though).</p>
+          <ul>
+            <li>PLA: a plant-based plastic, little smell, prints not very flexible.  Prints well at 180-220 C, even without a heated bed</li>
+            <li>ABS: a petroleum-based plastic, can smell a bit during printing.  Prints something roughly like Lego blocks.  Prints in the 220-250 C range, usually needs a heated bed and/or glue or other approaches to stick well.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>More exotic approaches</h3>
+          <p>There are some more exotic materials being experiemented with, like metal or wood suspended in plastic.</p>
+          <p>Resin + laser systems are also getting closer to being available in a desktop form factor and price range.</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Where do I build/get designs to print?</h3>
+          <ul>
+            <li><a href="http://www.thingiverse.com/">Thingiverse</a> - large library of existing designs to download</li>
+            <li><a href="http://www.tinkercad.com/">Tinkercad</a> - design software so simple a child could use it (which makes it great for design newbies like me).</li>
+          </ul>
+          <p class="fragment">Really though, any library that has or design tool that can output .STL files will work.</p>
+        </section>
+        <section>
+          <h3>So, once I have an .STL file, what do I do with it?</h3>
+          <p>The printer can't directly use a .STL file - it needs to be 'sliced' and output in a format called <code>GCODE</code>.  <code>GCODE</code> is basically a series of instructions to the printer to move the head to a series of specific locations and turn the extruder on and off that should result in your print being created.</p>
+        </section>
+        <section>
+          <p>This slicing process may add some extra bits to your print to get it to print well:</p>
+          <ul>
+            <li>Support: exta bits of plastic underneath your model so your model has something to sit on.</li>
+            <li>Brim: wider base so more of the model touches the bulid plate - useful to make sure your model sticks well and resist falling over.</li>
+          </ul>
+          <p>To slice your design, you want to use a tool like <a href="https://ultimaker.com/en/products/cura-software">Cura</a>, or one of many other similar tools (though since Cura is from the company that makes the Ultimaker 2, it has a profile for it already).</p>
+        </section>
+        <section>
+          <h3>How do I get the GCODE to the printer?</h3>
+          <p>You can direct-connect to the printer via USB, but then you have to stay connected during the print.</p>
+          <p>The preferred way is to use an SD card - the printer should have some sitting beside it to use.</p>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Printer mechanics</h3>
+          <p>All the controls are at the bottom-front - SD card slot on the left, screen in the center, control-wheel on the right (rotate and click - just like the old iPods).</p>
+          <p>Filament is fed into the slot above the arrow at the back-left, and the filment sits on a spool on the back.</p>
+        </section>
+        <section>
+          <h3>Possible issues and solutions</h3>
+          <ul>
+            <li>First layer doesn't stick: Need more filament or build plate heat, or add glue, tape, or brim.  May also need to re-level the build plate.</li>
+            <li>Support doesn't disconnect: configure it to be further away and/or smaller.</li>
+            <li>First layer doesn't stick evenly: Re-level the build plate.</li>
+          </ul>
+        </section>
+        <section>
+          <h3>How to level the build plate</h3>
+          <p>Select that operation from the menu, then run though the instructions as-given</p>
+          <ul>
+            <li>You'll be asked to position the nozzle just over the build plate in 3 different spots (back-center by moving the wheels, and front-left and front-right by the screws).</li>
+            <li>The best way to get a good distance is to use a normal sheet of paper between the bed and nozzle - it should be as tight as possible, but still move freely.</li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h3>Rules for use</h3>
+        <ul class="fragment">
+          <li>Be reasonable.  Remember this is an office  - don't print things you'd be embarassed to have seen sitting on your desk in front of Brad, Ross, or a client.</li>
+          <li>Avoid unnecessarily large or detailed models.  Depending on the intended quality, consider using the fast mode in Cura (Fast vs. Ulti quality can be a difference in print time of 1 hr vs. 6 hr).</li>
+          <li>Avoid monopolizing the printer.</li>
+          <li>More rules subject to being added in the future.</li>
+        </ul>
+      </section>
     </div>
   </div>
 
