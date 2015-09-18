@@ -146,8 +146,6 @@ gulp.task('server', ['index'], function() {
         middleware: function(c, opt) {
             return [
                 c().use('/bower_components', c.static('./bower_components')),
-                c().use('/api', proxy(url.parse('http://localhost:63915/api'))),
-                c().use('/signalr', proxy(url.parse('http://localhost:63915/signalr')))
             ];
         }
     });
@@ -155,13 +153,7 @@ gulp.task('server', ['index'], function() {
 gulp.task('server-release', ['index-release'], function() {
     connect.server({
         port: PORT,
-        root: 'dist',
-        middleware: function(c, opt) {
-            return [
-                c().use('/api', proxy(url.parse('http://localhost:63915/api'))),
-                c().use('/signalr', proxy(url.parse('http://localhost:63915/signalr')))
-            ];
-        }
+        root: 'dist'
     });
 });
 
